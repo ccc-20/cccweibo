@@ -8,15 +8,30 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myweibo.R;
+import com.example.myweibo.adapter.myRecyAdapter;
 import com.example.myweibo.base.BaseFragment;
 
 public class MyFragment extends BaseFragment {
 
+    private RecyclerView mrecycler;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_my,container,false);
+
+        View view= inflater.inflate(R.layout.fragment_my,container,false);
+        initView(view);
+        return view;
+    }
+
+    @Override
+    protected void initView(View view) {
+        mrecycler=view.findViewById(R.id.my_recycler);
+        mrecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        mrecycler.setAdapter(new myRecyAdapter());
     }
 }

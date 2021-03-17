@@ -147,7 +147,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!--第二部分：主要内容-->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
